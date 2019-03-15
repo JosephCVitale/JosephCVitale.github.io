@@ -1,34 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE = html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>Hewwo! Im baby cwossy!  Wecum to my first websit!! UwU</p>
-<p>.~~~~~~~~~~~_.~._</p>
-<p>.~~~~~~~~,~'.~@~.`~.</p>
-<p>.~~~~~~~~/ : _..._ : \</p>
-<p>.~~~~~~~{ :,"''\\`".: }</p>
-<p>.~~~~~~~~~`C) 9 _ 9 (--.._,-"""-.__</p>
-<p>.~~~~~~~~~~(  )(@)(  )             `.</p>
-<p>.~~~~~~~~~~~`-.___.-'                \</p>
-<p>.~~~~~~~~~~,' \ /    ,`             ;`-._,-.</p>
-<p>.~~~~~~~~,'  ,'/   ,'           `---t.,-.   \_</p>
-<p>.~~~~~~,--.,','  ,'----.__\         _(   \----'</p>
-<p>.~~~~'///,`,--.,'          `-.__.--'  `.  )</p>
-<p>.~~~~~~~'///,'                         `-`  </p>
+    <head>
+        <Title>How Old is Grace?</Title>
+        <script src="jquery-3.2.1.min.js"></script>
+        <style>
+            #wrapper{
+                position:relative;
+                z-index:0;
+            }
+            #age{
+                color:red;
+                position:absolute;
+                z-index:3;
+                top:264;
+                left:160;
+            }
+            
+            #image{
+                background: url(grace.png);
+                width:645;
+                height:800;
+                position:absolute;
+                z-index:1;
+                
+            }
+        </style>
+        <script>
+            $(document).ready(function(){
+                    var year = new Date().getFullYear();
+                    var month = new Date().getMonth();
+                    var day = new Date().getDate();
+                    //dec 2 1999
+                    var age = (year - 1999) - 1;
+                    if(month == 12){
+                        if(day>1){
+                            age = age + 1;
+                        }
+                    }
+                    $("#age").html(age);
+            });
+        
+        
+        </script>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <div id="age"></div>
+            <div id="image"></div>
+        </div>
+    </body>
 
- <nav>
-    <a href="/">Brown Bear</a>
-    <!-- web browsers respond to index.html and / the same way -->
-    <a href="./aboutme.html">About Me</a>
-  </nav>
-
- <div id="media">
-    <h2>Media</h2>
-    <img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/web101-image_brownbear.jpg" alt="A Brown Bear"/>
-    <video src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-1/lesson-2/htmlcss1-vid_brown-bear.mp4" width="320" height="240" controls>
-  Video not supported
-</video>
-  </div>
-
-</body>
 </html>
