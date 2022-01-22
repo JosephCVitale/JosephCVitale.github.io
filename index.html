@@ -1,12 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE = html>
+<html>
     <head>
-        <meta charset="utf-8">
-        <title>Joseph C. Vitale</title>
+        <Title>How Old is Grace?</Title>
+        <script src="jquery-3.2.1.min.js"></script>
+        <style>
+            #wrapper{
+                position:relative;
+                z-index:0;
+            }
+            #age{
+                color:red;
+                position:absolute;
+                z-index:3;
+                top:264;
+                left:160;
+            }
+            
+            #image{
+                background: url(grace.png);
+                width:645;
+                height:800;
+                position:absolute;
+                z-index:1;
+                
+            }
+        </style>
+        <script>
+            $(document).ready(function(){
+                    var year = new Date().getFullYear();
+                    var month = new Date().getMonth();
+                    var day = new Date().getDate();
+                    //dec 2 1999
+                    var age = (year - 1999) - 1;
+                    if(month == 12){
+                        if(day>1){
+                            age = age + 1;
+                        }
+                    }
+                    $("#age").html(age);
+            });
+        
+        
+        </script>
     </head>
     
     <body>
-        <h1>Welcome to Joseph Vitale's github.io page! </h1>
+        <div id="wrapper">
+            <div id="age"></div>
+            <div id="image"></div>
+        </div>
     </body>
 
 </html>
